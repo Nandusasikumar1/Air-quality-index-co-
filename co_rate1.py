@@ -41,9 +41,9 @@ class air:
         ax.set(facecolor='lightgray')
         plt.grid()
         st.pyplot(fig)
+        st.button('Refresh')
         image = Image.open('air_quality_index_standards_CPCB_650.jpg')
         st.image(image)
-        st.button('Refresh')
 if __name__ == "__main__":
     air().auto_co_visualizer()
     
