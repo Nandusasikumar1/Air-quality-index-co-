@@ -28,6 +28,7 @@ class air:
         f1.drop(x,axis='index',inplace=True)
         f1=f1.astype({'pollutant_avg':'int64'})
         st.title('Realtime carbon monoxide rate in Indian Cities (refreshes every one hour)')
+        st.text('NOTE:If a city  shows multiple carbon monoxide rates, it is data from multiple pollution control boards in the  city.')
         i=st.sidebar.selectbox('Select state',list(np.unique(f1['state'])))
         c=f1[f1['state']==i]
         fig, ax = plt.subplots(figsize=(7,6))
