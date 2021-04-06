@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 import numpy as np
+from PIL import Image
 class air:
     def airquality(self):
         url='https://api.data.gov.in/resource/3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69?api-key=579b464db66ec23bdd0000013f43dd62e27448bd6759892c8c5d4bfa&format=csv&offset=0&limit=2000'
@@ -40,6 +41,8 @@ class air:
         ax.set(facecolor='lightgray')
         plt.grid()
         st.pyplot(fig)
+        image = Image.open('air_quality_index_standards_CPCB_650.jpg')
+        st.image(image)
         st.button('Refresh')
 if __name__ == "__main__":
     air().auto_co_visualizer()
