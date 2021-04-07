@@ -22,13 +22,6 @@ class air:
         return df1
 
     def auto_co_visualizer(self):
-        hide_streamlit_style = """
-        </style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        </style>
-        """
-        st.markdown(hide_streamlit_style, unsafe_allow_html=True)
         file=self.airquality()
         f1=file[file['pollutant']=='CO']
         x=np.array([])
