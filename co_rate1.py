@@ -28,6 +28,7 @@ class air:
         x=np.append(x,f1[f1['pollutant_avg']=='NA'].index.values)
         f1.drop(x,axis='index',inplace=True)
         f1=f1.astype({'pollutant_avg':'int64'})
+        st.set_page_config(initial_sidebar_state='expanded')
         st.title('Real-time average carbon monoxide rate in Indian Cities (refreshes every one hour)')
         hide_streamlit_style = """
         <style>
@@ -39,7 +40,6 @@ class air:
         st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
         st.text('NOTE:If a city  shows multiple carbon monoxide rates, it is the data from multiple air quality monitoring stations in the  city.')
         i=st.sidebar.selectbox('Select state',list(np.unique(f1['state'])))
-        st.set_page_config(initial_sidebar_state='expanded')
         c=f1[f1['state']==i]
         fig, ax = plt.subplots(figsize=(7,6))
         plt.title(i)
