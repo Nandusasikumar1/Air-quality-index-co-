@@ -28,7 +28,7 @@ class air:
         x=np.append(x,f1[f1['pollutant_avg']=='NA'].index.values)
         f1.drop(x,axis='index',inplace=True)
         f1=f1.astype({'pollutant_avg':'int64'})
-        st.set_page_config(initial_sidebar_state='expanded')
+        st.set_page_config(page_title="Nandu's CO visualization",initial_sidebar_state='expanded')
         st.title('Real-time average carbon monoxide rate in Indian Cities (refreshes every one hour)')
         hide_streamlit_style = """
         <style>
